@@ -2,9 +2,10 @@ import Image from 'next/image';
 
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-royal-950 via-royal-900 to-royal-800">
+    <div className="min-h-screen flex items-center justify-center bg-[#030303]">
       <div className="flex flex-col items-center gap-5">
-        {/* Separate loading logo */}
+
+        {/* Loading logo */}
         <div className="relative w-20 h-20">
           <div
             className="absolute inset-0 rounded-full border-[3px] border-white/15 border-t-gold-400 animate-spin"
@@ -23,7 +24,7 @@ export default function Loading() {
           </div>
         </div>
 
-        <p className="font-inter text-royal-300 text-sm tracking-wide">
+        <p className="font-inter text-white/60 text-sm tracking-wide">
           Loading…
         </p>
       </div>

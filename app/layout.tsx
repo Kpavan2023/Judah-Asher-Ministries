@@ -21,14 +21,49 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jcwmm.org'),
+
   title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
+
   description:
-    'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and community fellowship in Hyderabad, Telangana.',
+    'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and fellowship in Hyderabad, Telangana.',
+
   keywords: [
-    'JCWMM', 'Jesus Christ Word Miracles Ministry', 'church Hyderabad', 'Telangana church',
-    'worship', 'sermons', 'prayer', 'Sunday service', 'Christian church India',
+    'JCWMM',
+    'Jesus Christ Word Miracles Ministry',
+    'church Hyderabad',
+    'Telangana church',
+    'worship',
+    'sermons',
+    'prayer',
+    'Sunday service',
+    'Christian church India',
   ],
+
   authors: [{ name: 'JCWMM' }],
+
+  /* Favicon + mobile icons */
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+      },
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+
+  /* Web app manifest */
+  manifest: '/site.webmanifest',
+
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -36,26 +71,32 @@ export const metadata: Metadata = {
     description:
       'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
     siteName: 'JCWMM',
-    images: [{ url: '/images/both_pic.png', width: 800, height: 800, alt: 'JCWMM Logo' }],
+    images: [
+      {
+        url: '/images/both_pic.png',
+        width: 800,
+        height: 800,
+        alt: 'JCWMM Logo',
+      },
+    ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
-    description: 'Official website of JCWMM — Sharing God\'s Word, Transforming Lives, Walking in Faith.',
+    description:
+      "Official website of JCWMM — Sharing God's Word, Transforming Lives, Walking in Faith.",
     images: ['/images/both_pic.png'],
   },
-  icons: {
-    icon: '/images/both_pic.png',
-    shortcut: '/images/both_pic.png',
-    apple: '/images/both_pic.png',
-  },
+
   other: {
     'application/ld+json': JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Church',
       name: 'Jesus Christ Word Miracles Ministry',
       alternateName: 'JCWMM',
-      description: 'A Spirit-filled, Word-centered ministry committed to making disciples and transforming lives.',
+      description:
+        'A Spirit-filled, Word-centered ministry committed to making disciples and transforming lives.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Hyderabad',
@@ -71,7 +112,6 @@ export const metadata: Metadata = {
     }),
   },
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>

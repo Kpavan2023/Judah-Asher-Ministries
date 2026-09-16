@@ -45,8 +45,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gold-400/50">
-                <Image src="/images/both_pic.png" alt="JCWMM Logo" fill sizes="56px" className="object-cover" />
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden ring-1 ring-[#ffff00]/30 bg-white">
+                <Image src="/images/both_pic.png" alt="JCWMM — Founders" fill sizes="56px" className="object-contain" />
               </div>
               <div>
                 <span className="font-poppins font-bold text-xl text-white block">JCWMM</span>

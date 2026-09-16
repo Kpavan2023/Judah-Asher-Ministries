@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, type ReactNode } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowLeft,
   CheckCheck,
@@ -49,10 +49,10 @@ function CopyButton({ text }: { text: string }) {
       onClick={copy}
       title={`Copy ${text}`}
       aria-label={`Copy ${text}`}
-      className="ml-1.5 inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-white/45 transition-all duration-200 hover:border-yellow-400/30 hover:bg-yellow-400/[0.06] hover:text-white"
+      className="give-copy-button"
     >
       {copied ? (
-        <CheckCheck className="h-3.5 w-3.5 text-yellow-300" />
+        <CheckCheck className="h-3.5 w-3.5" />
       ) : (
         <Copy className="h-3.5 w-3.5" />
       )}
@@ -72,16 +72,11 @@ function BankRow({
   value: string;
 }) {
   return (
-    <div className="grid grid-cols-[92px_minmax(0,1fr)] items-center gap-4 border-b border-white/[0.06] py-4 last:border-b-0">
-      <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/35">
-        {label}
-      </span>
+    <div className="give-bank-row">
+      <span className="give-bank-label">{label}</span>
 
       <div className="flex min-w-0 items-center justify-end">
-        <span className="break-all text-right text-sm font-medium text-white/90">
-          {value}
-        </span>
-
+        <span className="give-bank-value">{value}</span>
         <CopyButton text={value} />
       </div>
     </div>
@@ -95,10 +90,10 @@ function BankRow({
 function SectionEyebrow({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.28em] text-yellow-300/70">
+    <p className="give-eyebrow">
       {children}
     </p>
   );
@@ -118,342 +113,326 @@ export default function GiveNowClient() {
   );
 
   const upiId = upiPayment?.upiId ?? 'JCWMM@SBI';
-  const merchantName = upiPayment?.merchantName ?? 'JUDAH ASHER';
+  const merchantName =
+    upiPayment?.merchantName ?? 'JUDAH ASHER';
+
   const phones = upiPayment?.phones ?? [
     '+91 8686861836',
     '+91 9700545494',
   ];
 
   return (
-    <main className="min-h-screen bg-[#030303] font-inter text-white">
+    <main className="give-page">
+
       {/* =====================================================
           AMBIENT BACKGROUND
       ===================================================== */}
 
-      <div className="pointer-events-none fixed inset-0 -z-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[-220px] h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-yellow-400/[0.035] blur-[140px]" />
-
-        <div className="absolute bottom-[-180px] left-[-120px] h-[400px] w-[400px] rounded-full bg-blue-500/[0.025] blur-[120px]" />
+      <div className="give-page-ambient" aria-hidden="true">
+        <div className="give-ambient-glow give-ambient-glow-gold" />
+        <div className="give-ambient-glow give-ambient-glow-blue" />
       </div>
 
       {/* =====================================================
-          NAVBAR
+          TOP BAR
       ===================================================== */}
 
-      <header className="sticky top-0 z-50 border-b border-white/[0.07] bg-[#030303]/85 backdrop-blur-2xl">
-        <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Back */}
+      <header className="give-topbar">
+        <div className="give-topbar-inner">
+
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 text-[12px] font-medium text-white/55 transition-colors hover:text-white"
+            className="give-back-link"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] transition-all group-hover:border-white/20 group-hover:bg-white/[0.06]">
-              <ArrowLeft className="h-3.5 w-3.5" />
-            </span>
+            <ArrowLeft className="h-4 w-4" />
 
             <span className="hidden sm:inline">
               Back to Home
             </span>
+
+            <span className="sm:hidden">
+              Home
+            </span>
           </Link>
 
-          {/* Brand */}
-          <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2.5">
-            <div className="relative h-8 w-8 overflow-hidden rounded-full border border-yellow-400/25 bg-white/5">
+          <div className="flex items-center gap-2.5">
+            <ThemeToggle />
+
+            <div className="give-brand-image">
               <Image
                 src="/images/both_pic.png"
-                alt="JCWMM"
-                fill
-                sizes="32px"
-                className="object-cover"
+                alt="JCWMM — Founders"
+                width={34}
+                height={34}
+                className="h-full w-full object-contain"
               />
             </div>
 
-            <div className="hidden sm:block">
-              <p className="font-poppins text-[13px] font-bold tracking-wide text-white">
-                JCWMM
-              </p>
-
-              <p className="mt-0.5 text-[7px] uppercase tracking-[0.15em] text-white/35">
-                Give &amp; Support
-              </p>
-            </div>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
+            <span className="give-brand-name">
+              JCWMM
+            </span>
           </div>
         </div>
       </header>
 
+
       {/* =====================================================
-          INTRO HERO
+          INTRO
       ===================================================== */}
 
-      <section className="relative mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/15 bg-yellow-400/[0.045] px-4 py-2">
-            <WalletCards className="h-3.5 w-3.5 text-yellow-300" />
+      <section className="give-intro">
+        <div className="give-container give-intro-inner">
 
-            <span className="text-[9px] font-semibold uppercase tracking-[0.23em] text-yellow-300/85">
+          <div className="give-support-chip">
+            <WalletCards className="h-3.5 w-3.5" />
+
+            <span>
               Give &amp; Support
             </span>
           </div>
 
-          <h1 className="mt-6 font-poppins text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="give-main-title">
             Sow into the{' '}
-            <span
-              style={{
-                background:
-                  'linear-gradient(180deg, #ffffcc 0%, #ffff66 35%, #ffff00 70%, #cccc00 100%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span className="give-yellow-title">
               Kingdom of God
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
-            Your generosity helps Jesus Christ Word Miracles Ministry
-            preach the Gospel, reach lives, and continue the work God
-            has entrusted to us.
+          <p className="give-intro-copy">
+            Your generosity helps Jesus Christ Word Miracles
+            Ministry preach the Gospel, reach lives, and
+            continue the work God has entrusted to us.
           </p>
 
           {/* Verse */}
-          <div className="mx-auto mt-8 max-w-3xl">
-            <div className="relative overflow-hidden rounded-[24px] border border-yellow-400/10 bg-white/[0.025] px-6 py-6 shadow-[0_25px_80px_rgba(0,0,0,0.28)] sm:px-10">
-              <div className="absolute left-1/2 top-0 h-px w-28 -translate-x-1/2 bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent" />
+          <div className="give-verse-card">
 
-              <p className="font-poppins text-sm italic leading-7 text-white/65 sm:text-base">
-                {GIVE_NOW_VERSE.text}
-              </p>
+            <div className="give-verse-top-line" />
 
-              <div className="mt-4 flex items-center justify-center gap-3">
-                <span className="h-px w-8 bg-yellow-400/20" />
+            <p className="give-verse-text">
+              {GIVE_NOW_VERSE.text}
+            </p>
 
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-yellow-300">
-                  {GIVE_NOW_VERSE.reference}
-                </span>
-
-                <span className="h-px w-8 bg-yellow-400/20" />
-              </div>
+            <div className="give-verse-reference">
+              <span />
+              <span>{GIVE_NOW_VERSE.reference}</span>
+              <span />
             </div>
           </div>
         </div>
       </section>
 
+
       {/* =====================================================
-          MAIN CONTENT
+          MAIN
       ===================================================== */}
 
-      <div className="relative mx-auto max-w-7xl space-y-16 px-4 pb-20 sm:px-6 lg:px-8">
+      <div className="give-container give-main">
+
 
         {/* ===================================================
-            01 — ABRAHAMIC COVENANT PARTNER
+            ABRAHAMIC COVENANT PARTNER
         =================================================== */}
 
         <section>
-          <div className="mb-7 flex items-end justify-between gap-6">
+
+          <div className="give-section-heading">
             <div>
               <SectionEyebrow>
                 Monthly Partnership
               </SectionEyebrow>
 
-              <h2 className="font-poppins text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl">
+              <h2 className="give-section-title">
                 Become an Abrahamic Covenant Partner
               </h2>
 
-              <p className="mt-2 max-w-xl text-sm leading-6 text-white/40">
-                Partner consistently with the ministry and help us
-                carry the Gospel farther.
+              <p className="give-section-description">
+                Partner consistently with the ministry and help
+                us carry the Gospel farther.
               </p>
             </div>
 
-            <div className="hidden h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/15 bg-yellow-400/[0.045] sm:flex">
-              <Sparkles className="h-4 w-4 text-yellow-300/80" />
+            <div className="give-heading-icon">
+              <Sparkles className="h-4 w-4" />
             </div>
           </div>
 
-          {/* Main partnership panel */}
-          <div className="overflow-hidden rounded-[32px] border border-yellow-400/12 bg-[#090909] shadow-[0_35px_110px_rgba(0,0,0,0.48)]">
-            <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
 
-              {/* Image */}
-              <div className="relative flex items-center justify-center bg-black p-3 sm:p-5 lg:p-7">
-                <div className="relative w-full overflow-hidden rounded-[24px] border border-white/[0.07] bg-white/[0.015]">
-                  <Image
-                    src="/images/BECOME_A_ABRAHAMIC_COVENANT_PARTNER.jpg"
-                    alt="Become an Abrahamic Covenant Partner"
-                    width={2048}
-                    height={2048}
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="block h-auto w-full object-contain"
-                  />
+          {/* Partnership feature */}
+          <div className="give-feature-card">
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/[0.025]" />
+            {/* Image */}
+            <div className="give-feature-image-area">
+              <div className="give-image-frame">
+                <Image
+                  src="/images/BECOME_A_ABRAHAMIC_COVENANT_PARTNER.jpg"
+                  alt="Become an Abrahamic Covenant Partner"
+                  width={2048}
+                  height={2048}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="block h-auto w-full object-contain"
+                />
+              </div>
+            </div>
+
+
+            {/* Information */}
+            <div className="give-feature-content">
+
+              <div className="give-mini-label">
+                <span />
+                <span>Abrahamic Covenant</span>
+              </div>
+
+              <h3 className="give-feature-title">
+                Partner with the{' '}
+                <span className="give-yellow-title">
+                  Ministry
+                </span>
+              </h3>
+
+              <p className="give-feature-description">
+                Become a monthly partner and sow consistently
+                into the work of the ministry. Your partnership
+                helps us preach the Gospel, conduct crusades,
+                and reach more people with the Word of God.
+              </p>
+
+
+              {/* Divider */}
+              <div className="give-divider">
+                <span className="give-divider-gold" />
+                <span className="give-divider-dot" />
+                <span className="give-divider-line" />
+              </div>
+
+
+              {/* UPI compact */}
+              <div className="give-upi-module">
+
+                <div className="give-upi-heading">
+                  <div>
+                    <p className="give-mini-label-text">
+                      Give Monthly
+                    </p>
+
+                    <p className="give-upi-subtitle">
+                      Scan with any supported UPI app
+                    </p>
+                  </div>
+
+                  <div className="give-payment-icon">
+                    <QrCode className="h-4 w-4" />
+                  </div>
+                </div>
+
+
+                <div className="give-upi-grid">
+
+                  <div className="give-qr-box">
+                    <Image
+                      src="/images/qrrr.jpeg"
+                      alt="JCWMM UPI QR Code"
+                      width={2048}
+                      height={2048}
+                      sizes="112px"
+                      className="block aspect-square h-auto w-full object-contain"
+                    />
+                  </div>
+
+
+                  <div className="min-w-0">
+
+                    <p className="give-field-label">
+                      UPI ID
+                    </p>
+
+                    <div className="mt-1 flex items-center">
+                      <span className="give-upi-id">
+                        {upiId}
+                      </span>
+
+                      <CopyButton text={upiId} />
+                    </div>
+
+                    <p className="give-merchant">
+                      Merchant:{' '}
+                      <span>
+                        {merchantName}
+                      </span>
+                    </p>
+
+                    <div className="give-app-pills">
+                      {[
+                        'GPay',
+                        'PhonePe',
+                        'Paytm',
+                        'BHIM',
+                      ].map((app) => (
+                        <span key={app}>
+                          {app}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Information */}
-              <div className="flex flex-col justify-center border-t border-white/[0.07] p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
 
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-300" />
-
-                  <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-yellow-300/75">
-                    Abrahamic Covenant
-                  </span>
-                </div>
-
-                <h3 className="mt-5 font-poppins text-2xl font-semibold leading-tight tracking-[-0.025em] text-white sm:text-3xl">
-                  Partner with the{' '}
-                  <span
-                    style={{
-                      background:
-                        'linear-gradient(180deg, #ffffcc 0%, #ffff66 35%, #ffff00 70%, #cccc00 100%)',
-                      WebkitBackgroundClip: 'text',
-                      backgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
+              {/* Contact numbers */}
+              <div className="give-phone-list">
+                {phones.map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:${phone.replace(/\s/g, '')}`}
+                    className="give-phone-pill"
                   >
-                    Ministry
-                  </span>
-                </h3>
-
-                <p className="mt-4 max-w-lg text-sm leading-7 text-white/45">
-                  Become a monthly partner and sow consistently into
-                  the work of the ministry. Your partnership helps
-                  us preach the Gospel, conduct crusades, and reach
-                  more people with the Word of God.
-                </p>
-
-                {/* Divider */}
-                <div className="my-7 flex items-center gap-3">
-                  <span className="h-px w-10 bg-yellow-400/35" />
-                  <span className="h-1 w-1 rounded-full bg-yellow-300" />
-                  <span className="h-px flex-1 bg-white/[0.07]" />
-                </div>
-
-                {/* UPI compact module */}
-                <div className="rounded-[22px] border border-white/[0.07] bg-white/[0.025] p-4 sm:p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-yellow-300/70">
-                        Give Monthly
-                      </p>
-
-                      <p className="mt-1 text-sm text-white/65">
-                        Scan with any supported UPI app
-                      </p>
-                    </div>
-
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-yellow-400/15 bg-yellow-400/[0.05]">
-                      <QrCode className="h-4 w-4 text-yellow-300" />
-                    </div>
-                  </div>
-
-                  <div className="mt-5 grid items-center gap-5 sm:grid-cols-[112px_minmax(0,1fr)]">
-                    <div className="mx-auto w-[112px] rounded-[16px] bg-white p-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.25)]">
-                      <Image
-                        src="/images/qrrr.jpeg"
-                        alt="JCWMM UPI QR Code"
-                        width={2048}
-                        height={2048}
-                        sizes="112px"
-                        className="block aspect-square h-auto w-full object-contain"
-                      />
-                    </div>
-
-                    <div className="min-w-0">
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30">
-                        UPI ID
-                      </p>
-
-                      <div className="mt-1 flex items-center">
-                        <span className="break-all font-poppins text-base font-semibold text-yellow-300">
-                          {upiId}
-                        </span>
-
-                        <CopyButton text={upiId} />
-                      </div>
-
-                      <p className="mt-2 text-xs text-white/40">
-                        Merchant:{' '}
-                        <span className="font-medium text-white/70">
-                          {merchantName}
-                        </span>
-                      </p>
-
-                      <div className="mt-3 flex flex-wrap gap-1.5">
-                        {[
-                          'GPay',
-                          'PhonePe',
-                          'Paytm',
-                          'BHIM',
-                        ].map((app) => (
-                          <span
-                            key={app}
-                            className="rounded-full border border-white/[0.07] bg-white/[0.035] px-2.5 py-1 text-[8px] font-medium text-white/45"
-                          >
-                            {app}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Contact numbers */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {phones.map((phone) => (
-                    <a
-                      key={phone}
-                      href={`tel:${phone.replace(/\s/g, '')}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.025] px-3.5 py-2 text-[11px] font-medium text-white/55 transition-all hover:border-yellow-400/25 hover:bg-yellow-400/[0.04] hover:text-white"
-                    >
-                      <Phone className="h-3 w-3 text-yellow-300" />
-                      {phone}
-                    </a>
-                  ))}
-                </div>
+                    <Phone className="h-3 w-3" />
+                    {phone}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </section>
+
 
         {/* ===================================================
             PAYMENT METHODS
         =================================================== */}
 
         <section>
-          <div className="mb-7">
-            <SectionEyebrow>
-              Giving Methods
-            </SectionEyebrow>
 
-            <h2 className="font-poppins text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl">
-              Choose Your Way to Give
-            </h2>
+          <div className="give-section-heading">
+            <div>
+              <SectionEyebrow>
+                Giving Methods
+              </SectionEyebrow>
 
-            <p className="mt-2 max-w-xl text-sm leading-6 text-white/40">
-              Use UPI for a quick digital gift or transfer directly
-              through the bank.
-            </p>
+              <h2 className="give-section-title">
+                Choose Your Way to Give
+              </h2>
+
+              <p className="give-section-description">
+                Use UPI for a quick digital gift or transfer
+                directly through the bank.
+              </p>
+            </div>
           </div>
+
 
           <div className="grid gap-6 lg:grid-cols-2">
 
+
             {/* =================================================
-                UPI CARD
+                UPI
             ================================================= */}
 
-            <article className="group overflow-hidden rounded-[28px] border border-white/[0.07] bg-[#090909] shadow-[0_25px_75px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1">
-              {/* Image */}
-              <div className="relative bg-black p-3 sm:p-5">
-                <div className="overflow-hidden rounded-[20px] border border-white/[0.07]">
+            <article className="give-payment-card">
+
+              <div className="give-payment-image-area">
+                <div className="give-payment-image-frame">
                   <Image
                     src="/images/JCWMM_OFFERING_QR_CODE_2.jpg"
                     alt="JCWMM UPI payment QR code"
@@ -465,32 +444,34 @@ export default function GiveNowClient() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="border-t border-white/[0.07] p-6 sm:p-7">
-                <div className="flex items-start justify-between gap-4">
+
+              <div className="give-payment-content">
+
+                <div className="give-payment-title-row">
                   <div>
                     <SectionEyebrow>
                       Digital Giving
                     </SectionEyebrow>
 
-                    <h3 className="font-poppins text-xl font-semibold text-white">
+                    <h3 className="give-payment-title">
                       UPI &amp; Mobile Payments
                     </h3>
                   </div>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-400/15 bg-yellow-400/[0.05]">
-                    <Smartphone className="h-4 w-4 text-yellow-300" />
+                  <div className="give-payment-icon">
+                    <Smartphone className="h-4 w-4" />
                   </div>
                 </div>
 
-                {/* UPI ID */}
-                <div className="mt-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30">
+
+                <div className="give-data-box">
+
+                  <p className="give-field-label">
                     UPI ID
                   </p>
 
                   <div className="mt-1 flex items-center">
-                    <span className="break-all font-poppins text-lg font-semibold text-yellow-300">
+                    <span className="give-upi-id give-upi-id-large">
                       {upiId}
                     </span>
 
@@ -498,24 +479,26 @@ export default function GiveNowClient() {
                   </div>
                 </div>
 
-                {/* Merchant */}
-                <div className="mt-3 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30">
+
+                <div className="give-data-box">
+
+                  <p className="give-field-label">
                     Merchant Name
                   </p>
 
-                  <p className="mt-1 font-poppins text-sm font-medium text-white/85">
+                  <p className="give-merchant-name">
                     {merchantName}
                   </p>
                 </div>
 
-                {/* Apps */}
-                <div className="mt-6">
-                  <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30">
+
+                <div className="give-app-section">
+
+                  <p className="give-field-label">
                     Supported Apps
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="give-app-pills give-app-pills-large">
                     {[
                       'GPay',
                       'PhonePe',
@@ -523,30 +506,28 @@ export default function GiveNowClient() {
                       'BHIM UPI',
                       'WhatsApp Pay',
                     ].map((app) => (
-                      <span
-                        key={app}
-                        className="rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5 text-[10px] font-medium text-white/50"
-                      >
+                      <span key={app}>
                         {app}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Contact */}
-                <div className="mt-6 border-t border-white/[0.06] pt-5">
-                  <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/30">
+
+                <div className="give-help-section">
+
+                  <p className="give-field-label">
                     Need Help?
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="give-phone-list">
                     {phones.map((phone) => (
                       <a
                         key={phone}
                         href={`tel:${phone.replace(/\s/g, '')}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-2 text-[11px] text-white/55 transition-colors hover:border-yellow-400/20 hover:text-white"
+                        className="give-phone-pill"
                       >
-                        <Phone className="h-3 w-3 text-yellow-300" />
+                        <Phone className="h-3 w-3" />
                         {phone}
                       </a>
                     ))}
@@ -555,14 +536,15 @@ export default function GiveNowClient() {
               </div>
             </article>
 
+
             {/* =================================================
-                BANK CARD
+                BANK
             ================================================= */}
 
-            <article className="group overflow-hidden rounded-[28px] border border-white/[0.07] bg-[#090909] shadow-[0_25px_75px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1">
-              {/* Image */}
-              <div className="relative bg-black p-3 sm:p-5">
-                <div className="overflow-hidden rounded-[20px] border border-white/[0.07]">
+            <article className="give-payment-card">
+
+              <div className="give-payment-image-area">
+                <div className="give-payment-image-frame">
                   <Image
                     src="/images/offering-2.jpeg"
                     alt="JCWMM bank transfer offering"
@@ -574,30 +556,33 @@ export default function GiveNowClient() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="border-t border-white/[0.07] p-6 sm:p-7">
-                <div className="flex items-start justify-between gap-4">
+
+              <div className="give-payment-content">
+
+                <div className="give-payment-title-row">
+
                   <div>
                     <SectionEyebrow>
                       Direct Transfer
                     </SectionEyebrow>
 
-                    <h3 className="font-poppins text-xl font-semibold text-white">
+                    <h3 className="give-payment-title">
                       Bank Transfer — SBI
                     </h3>
 
-                    <p className="mt-1 text-xs text-white/35">
+                    <p className="give-payment-note">
                       NEFT · RTGS · IMPS · Internet Banking
                     </p>
                   </div>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-400/15 bg-yellow-400/[0.05]">
-                    <Landmark className="h-4 w-4 text-yellow-300" />
+                  <div className="give-payment-icon">
+                    <Landmark className="h-4 w-4" />
                   </div>
                 </div>
 
-                {/* Details */}
-                <div className="mt-6 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] px-4">
+
+                <div className="give-bank-details">
+
                   <BankRow
                     label="Account Name"
                     value={
@@ -647,15 +632,15 @@ export default function GiveNowClient() {
                   />
                 </div>
 
-                {/* Contact */}
-                <div className="mt-6 flex flex-wrap gap-2">
+
+                <div className="give-phone-list give-bank-phones">
                   {phones.map((phone) => (
                     <a
                       key={phone}
                       href={`tel:${phone.replace(/\s/g, '')}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-2 text-[11px] text-white/55 transition-colors hover:border-yellow-400/20 hover:text-white"
+                      className="give-phone-pill"
                     >
-                      <Phone className="h-3 w-3 text-yellow-300" />
+                      <Phone className="h-3 w-3" />
                       {phone}
                     </a>
                   ))}
@@ -665,12 +650,14 @@ export default function GiveNowClient() {
           </div>
         </section>
 
+
         {/* ===================================================
             TRUST STRIP
         =================================================== */}
 
         <section>
-          <div className="grid gap-4 sm:grid-cols-3">
+
+          <div className="give-trust-grid">
             {[
               {
                 icon: Heart,
@@ -696,17 +683,17 @@ export default function GiveNowClient() {
               return (
                 <div
                   key={item.title}
-                  className="rounded-[22px] border border-white/[0.07] bg-white/[0.02] p-5 transition-colors hover:border-yellow-400/15 hover:bg-yellow-400/[0.02]"
+                  className="give-trust-card"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-400/12 bg-yellow-400/[0.045]">
-                    <Icon className="h-4 w-4 text-yellow-300" />
+                  <div className="give-trust-icon">
+                    <Icon className="h-4 w-4" />
                   </div>
 
-                  <h3 className="mt-4 font-poppins text-sm font-semibold text-white">
+                  <h3 className="give-trust-title">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-xs leading-5 text-white/35">
+                  <p className="give-trust-description">
                     {item.description}
                   </p>
                 </div>
@@ -715,21 +702,27 @@ export default function GiveNowClient() {
           </div>
         </section>
 
+
         {/* ===================================================
             CONTACT
         =================================================== */}
 
-        <section className="border-t border-white/[0.07] pt-8 text-center">
-          <p className="text-xs leading-6 text-white/35 sm:text-sm">
+        <section className="give-contact-section">
+
+          <div className="give-contact-line" />
+
+          <p className="give-contact-text">
             For giving-related queries, contact{' '}
             <a
               href="mailto:jcwmm.off@gmail.com"
-              className="font-medium text-yellow-300 transition-colors hover:text-yellow-200"
+              className="give-contact-email"
             >
               jcwmm.off@gmail.com
             </a>
           </p>
+
         </section>
+
       </div>
     </main>
   );

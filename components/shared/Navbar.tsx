@@ -48,23 +48,21 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-royal-900/10'
-          : 'bg-transparent'
+      className={`site-navbar-shell fixed top-0 left-0 right-0 z-50 px-3 pt-3 sm:px-5 lg:px-8 transition-all duration-500 ${
+        scrolled ? 'site-navbar-shell-scrolled' : ''
       }`}
       role="banner"
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18 py-3" aria-label="Main navigation">
+      <nav className="site-navbar max-w-7xl mx-auto px-3 sm:px-5 lg:px-7 flex items-center justify-between min-h-[64px] py-2.5" aria-label="Main navigation">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="JCWMM Home">
-          <div className="relative w-11 h-11 rounded-full overflow-hidden ring-2 ring-gold-400/60 shadow-md">
+          <div className="relative w-11 h-11 rounded-xl overflow-hidden ring-1 ring-[#ffff00]/35 bg-white shadow-lg shadow-black/20">
             <Image
               src="/images/both_pic.png"
-              alt="JCWMM Logo"
+              alt="JCWMM — Prophet Judah Asher and Prophetess Judah Praisy"
               fill
               sizes="44px"
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -148,13 +146,13 @@ export default function Navbar() {
           <ThemeToggle />
           <Link
             href="/give-now"
-            className="px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-royal-600 hover:bg-royal-500 text-white font-poppins font-semibold text-xs sm:text-sm shadow-md transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            className="site-navbar-give px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-poppins font-semibold text-xs sm:text-sm whitespace-nowrap"
           >
             Give Now
           </Link>
           <Link
             href="/plan-your-visit"
-            className="hidden sm:inline-flex px-5 py-2.5 rounded-full gold-gradient text-white font-poppins font-semibold text-sm shadow-md hover:shadow-gold-400/40 hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="hidden sm:inline-flex site-navbar-visit px-5 py-2.5 rounded-full font-poppins font-semibold text-sm"
           >
             Plan Your Visit
           </Link>
@@ -163,7 +161,7 @@ export default function Navbar() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
+          className={`site-navbar-menu-button lg:hidden p-2 rounded-xl transition-colors ${
             scrolled ? 'text-royal-800 hover:bg-royal-50' : 'text-white hover:bg-white/10'
           }`}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -179,11 +177,7 @@ export default function Navbar() {
           mobileOpen ? 'max-h-screen' : 'max-h-0'
         }`}
       >
-        <div className={`px-4 py-4 space-y-1 backdrop-blur-md border-t ${
-          scrolled
-            ? 'bg-white/98 border-royal-100'
-            : 'bg-black/95 border-white/10'
-        }`}>
+        <div className="mobile-menu-panel px-4 py-4 space-y-1">
           {NAV_LINKS.map((link) =>
             link.children ? (
               <div key={link.label}>
@@ -226,18 +220,14 @@ export default function Navbar() {
             </div>
             <Link
               href="/give-now"
-              className={`block w-full text-center px-5 py-3 rounded-full font-poppins font-semibold text-sm transition-colors ${
-                scrolled
-                  ? 'bg-royal-600 text-white hover:bg-royal-500'
-                  : 'bg-white/10 text-white border border-white/20 hover:bg-white/20'
-              }`}
+              className="site-navbar-give block w-full text-center px-5 py-3 rounded-full font-poppins font-semibold text-sm"
               onClick={() => setMobileOpen(false)}
             >
               Give Now
             </Link>
             <Link
               href="/plan-your-visit"
-              className="block w-full text-center px-5 py-3 rounded-full gold-gradient text-white font-poppins font-semibold text-sm"
+              className="site-navbar-visit block w-full text-center px-5 py-3 rounded-full font-poppins font-semibold text-sm"
               onClick={() => setMobileOpen(false)}
             >
               Plan Your Visit

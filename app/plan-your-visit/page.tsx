@@ -162,19 +162,59 @@ export default function PlanYourVisitPage() {
   return (
     <>
       <ScrollProgress />
-      {/* Minimal top bar — no navbar on this page */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <Link href="/" className="inline-flex items-center gap-2 text-royal-700 hover:text-royal-900 text-sm font-inter font-medium transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <span className="font-poppins font-bold text-royal-900 text-sm">Plan Your Visit</span>
-          </div>
-        </div>
+
+{/* =====================================================
+    PLAN YOUR VISIT — PREMIUM FLOATING GLASS BAR
+===================================================== */}
+
+<div className="visit-topbar">
+  <div className="visit-topbar-inner">
+
+    {/* Back */}
+    <Link
+      href="/"
+      className="visit-back-link"
+    >
+      <ArrowLeft className="h-4 w-4" />
+
+      <span className="hidden sm:inline">
+        Back to Home
+      </span>
+
+      <span className="sm:hidden">
+        Home
+      </span>
+    </Link>
+
+
+    {/* Brand / Theme */}
+    <div className="flex items-center gap-2.5">
+
+      <ThemeToggle />
+
+      <div className="visit-brand-image">
+        <Image
+          src="/images/both_pic.png"
+          alt="JCWMM — Founders"
+          width={34}
+          height={34}
+          className="h-full w-full object-contain"
+        />
       </div>
+
+      <div className="hidden xs:block">
+        <span className="visit-brand-name">
+          Plan Your Visit
+        </span>
+
+        <span className="visit-brand-subtitle">
+          JCWMM
+        </span>
+      </div>
+
+    </div>
+  </div>
+</div>
       <main className="pt-16">
         {/* Hero */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
