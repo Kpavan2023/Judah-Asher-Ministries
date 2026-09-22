@@ -62,14 +62,14 @@ export default function AdminLoginPage() {
               <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center overflow-hidden border border-[#0B1F3A]">
                 <Image
                   src="/images/both_pic.png"
-                  alt="JCWMM Logo"
+                  alt="Judah Asher Ministries Logo"
                   width={56}
                   height={56}
                   className="object-cover w-full h-full"
                 />
               </div>
             </div>
-            <h1 className="font-poppins font-bold text-white text-xl">JCWMM Admin</h1>
+            <h1 className="font-poppins font-bold text-white text-xl">Judah Asher Ministries Admin</h1>
             <p className="font-inter text-royal-400 text-sm mt-1">Prayer Requests Dashboard</p>
           </div>
 
@@ -170,7 +170,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-center text-royal-400 text-xs font-inter mt-6">
-          Jesus Christ Word Miracles Ministry &copy; {new Date().getFullYear()}
+          Judah Asher Ministries &copy; {new Date().getFullYear()}
         </p>
       </div>
     </div>

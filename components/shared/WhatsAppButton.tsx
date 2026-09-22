@@ -3,7 +3,7 @@
 import { CHURCH_INFO } from '@/lib/church-data';
 
 export default function WhatsAppButton() {
-  const message = encodeURIComponent('Hello! I found JCWMM\'s website and would like to know more about your church.');
+  const message = encodeURIComponent('Hello! I found Judah Asher Ministries website and would like to know more about your church.');
   const url = `https://wa.me/${CHURCH_INFO.contact.whatsapp.replace(/\D/g, '')}?text=${message}`;
 
   return (

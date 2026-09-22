@@ -22,14 +22,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://jcwmm.org'),
 
-  title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
+  title: 'Judah Asher Ministries',
 
   description:
-    'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and fellowship in Hyderabad, Telangana.',
+    'Official website of Judah Asher Ministries. Join us for worship, prayer, Bible study, live sermons, and fellowship in Hyderabad, Telangana.',
 
   keywords: [
-    'JCWMM',
-    'Jesus Christ Word Miracles Ministry',
+    'Judah Asher Ministries',
     'church Hyderabad',
     'Telangana church',
     'worship',
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     'Christian church India',
   ],
 
-  authors: [{ name: 'JCWMM' }],
+  authors: [{ name: 'Judah Asher Ministries' }],
 
   /* Favicon + mobile icons */
   icons: {
@@ -67,25 +66,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
+    title: 'Judah Asher Ministries',
     description:
-      'Official website of Jesus Christ Word Miracles Ministry. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
-    siteName: 'JCWMM',
+      'Official website of Judah Asher Ministries. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
+    siteName: 'Judah Asher Ministries',
     images: [
       {
         url: '/images/both_pic.png',
         width: 800,
         height: 800,
-        alt: 'JCWMM Logo',
+        alt: 'Judah Asher Ministries Logo',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Jesus Christ Word Miracles Ministry (JCWMM)',
+    title: 'Judah Asher Ministries',
     description:
-      "Official website of JCWMM — Sharing God's Word, Transforming Lives, Walking in Faith.",
+      "Official website of Judah Asher Ministries — Sharing God's Word, Transforming Lives, Walking in Faith.",
     images: ['/images/both_pic.png'],
   },
 
@@ -93,8 +92,7 @@ export const metadata: Metadata = {
     'application/ld+json': JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Church',
-      name: 'Jesus Christ Word Miracles Ministry',
-      alternateName: 'JCWMM',
+      name: 'Judah Asher Ministries',
       description:
         'A Spirit-filled, Word-centered ministry committed to making disciples and transforming lives.',
       address: {

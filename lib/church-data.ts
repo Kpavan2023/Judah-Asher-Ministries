@@ -1,14 +1,14 @@
 export const CHURCH_INFO = {
-  name: 'Jesus Christ Word Miracles Ministry',
-  shortName: 'JCWMM',
+  name: 'Judah Asher Ministries',
+  shortName: 'JAM',
   tagline: 'Sharing God\'s Word • Transforming Lives • Walking in Faith',
   founded: '2010',
   address: {
-    street: 'JCWMM Church',
+    street: 'Judah Asher Ministries',
     city: 'Hyderabad',
     state: 'Telangana',
     country: 'India',
-    full: 'JCWMM Church, Hyderabad, Telangana, India',
+    full: 'Judah Asher Ministries, Hyderabad, Telangana, India',
   },
   contact: {
     phone1: '+91 9700545494',

@@ -45,12 +45,11 @@ export default function HeroSection() {
             />
             <div className="hero-founder-image-fade" aria-hidden="true" />
           </div>
-          <span className="hero-image-caption">Founders · JCWMM</span>
         </div>
 
         <div className="hero-content">
           <p className={`hero-eyebrow ${mounted ? 'hero-enter hero-enter-delay-1' : ''}`}>
-            Founders <span aria-hidden="true">•</span> JCWMM
+            Founders <span aria-hidden="true">•</span> Judah Asher Ministries
           </p>
 
           <p className={`hero-welcome ${mounted ? 'hero-enter hero-enter-delay-2' : ''}`}>
@@ -58,7 +57,7 @@ export default function HeroSection() {
           </p>
 
           <h1 id="hero-title" className={`hero-title ${mounted ? 'hero-enter hero-enter-delay-3' : ''}`}>
-            JCWMM
+            Judah Asher Ministries
           </h1>
 
           <span className="hero-founder-welcome-divider" aria-hidden="true" />
@@ -81,9 +80,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <p className={`hero-ministry-name ${mounted ? 'hero-enter hero-enter-delay-5' : ''}`}>
-            Jesus Christ Word Miracles Ministry
-          </p>
+          
           <p className={`hero-tagline ${mounted ? 'hero-enter hero-enter-delay-5' : ''}`}>
             Sharing God&apos;s Word <span aria-hidden="true">•</span> Transforming Lives <span aria-hidden="true">•</span> Walking in Faith
           </p>

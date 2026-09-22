@@ -126,7 +126,7 @@ export default function ContactSection() {
           <SectionReveal delay={200} className="lg:col-span-2">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-royal-100/50 border border-royal-50 h-full min-h-[400px]">
               <iframe
-                title="JCWMM Church Location"
+                title="Judah Asher Ministries Location"
                 src={CHURCH_INFO.location.embed}
                 width="100%"
                 height="100%"

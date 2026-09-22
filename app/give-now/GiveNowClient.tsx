@@ -93,7 +93,7 @@ function SectionEyebrow({
   children: ReactNode;
 }) {
   return (
-    <p className="give-eyebrow">
+    <p className="jcwmm-eyebrow">
       {children}
     </p>
   );
@@ -161,7 +161,7 @@ export default function GiveNowClient() {
             <div className="give-brand-image">
               <Image
                 src="/images/both_pic.png"
-                alt="JCWMM — Founders"
+                alt="Judah Asher Ministries — Founders"
                 width={34}
                 height={34}
                 className="h-full w-full object-contain"
@@ -169,7 +169,7 @@ export default function GiveNowClient() {
             </div>
 
             <span className="give-brand-name">
-              JCWMM
+              Judah Asher Ministries
             </span>
           </div>
         </div>
@@ -199,8 +199,8 @@ export default function GiveNowClient() {
           </h1>
 
           <p className="give-intro-copy">
-            Your generosity helps Jesus Christ Word Miracles
-            Ministry preach the Gospel, reach lives, and
+            Your generosity helps Judah Asher Ministries
+            preach the Gospel, reach lives, and
             continue the work God has entrusted to us.
           </p>
 
@@ -333,7 +333,7 @@ export default function GiveNowClient() {
                   <div className="give-qr-box">
                     <Image
                       src="/images/qrrr.jpeg"
-                      alt="JCWMM UPI QR Code"
+                      alt="Judah Asher Ministries UPI QR Code"
                       width={2048}
                       height={2048}
                       sizes="112px"

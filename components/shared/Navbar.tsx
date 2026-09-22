@@ -55,11 +55,11 @@ export default function Navbar() {
     >
       <nav className="site-navbar max-w-7xl mx-auto px-3 sm:px-5 lg:px-7 flex items-center justify-between min-h-[64px] py-2.5" aria-label="Main navigation">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="JCWMM Home">
+        <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="JAM Home">
           <div className="relative w-11 h-11 rounded-xl overflow-hidden ring-1 ring-[#ffff00]/35 bg-white shadow-lg shadow-black/20">
             <Image
               src="/images/both_pic.png"
-              alt="JCWMM — Prophet Judah Asher and Prophetess Judah Praisy"
+              alt="Judah Asher Ministries — Prophet Judah Asher and Prophetess Judah Praisy"
               fill
               sizes="44px"
               className="object-contain"
@@ -72,14 +72,13 @@ export default function Navbar() {
                 scrolled ? 'text-royal-900' : 'text-white'
               }`}
             >
-              JCWMM
+              Judah Asher Ministries
             </span>
             <span
               className={`text-xs font-inter leading-tight block transition-colors duration-300 ${
                 scrolled ? 'text-royal-600' : 'text-blue-200'
               }`}
             >
-              Jesus Christ Word Miracles Ministry
             </span>
           </div>
         </Link>

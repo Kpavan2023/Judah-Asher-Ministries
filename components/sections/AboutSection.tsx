@@ -31,15 +31,15 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 section-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ── About JCWMM header ── */}
+        {/* ── About Judah Asher Ministries header ── */}
         <SectionReveal className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-royal-100 text-royal-700 text-xs font-semibold font-inter uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-royal-100 text-royal-700 jcwmm-eyebrow mb-4">
             Our Story
           </span>
-          <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-royal-900 mb-4">
-            About <span className="text-gradient-blue">JCWMM</span>
+          <h2 className="jcwmm-h2 mb-4">
+            About <span className="text-gradient-blue">Judah Asher Ministries</span>
           </h2>
-          <p className="font-inter text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="jcwmm-body text-gray-600 max-w-3xl mx-auto">
             We are a Spirit-filled, Word-centered ministry committed to making disciples,
             transforming lives, and glorifying Jesus Christ in everything we do.
           </p>
@@ -52,7 +52,7 @@ export default function AboutSection() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-royal-900/20 aspect-[4/3]">
                 <Image
                   src="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="JCWMM congregation in worship"
+                  alt="JAM congregation in worship"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -61,8 +61,8 @@ export default function AboutSection() {
               </div>
               {/* Floating card */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px]">
-                <div className="text-3xl font-poppins font-bold text-gradient-blue">18+</div>
-                <div className="text-sm text-gray-600 font-inter">Years Serving the Community</div>
+                <div className="jcwmm-h2">18+</div>
+                <div className="jcwmm-small text-gray-600">Years Serving the Community</div>
               </div>
               {/* Gold accent */}
               <div className="absolute -top-4 -left-4 w-20 h-20 rounded-2xl gold-gradient opacity-80 -z-10" />
@@ -71,15 +71,15 @@ export default function AboutSection() {
 
           <SectionReveal delay={200}>
             <div>
-              <h3 className="font-poppins font-bold text-3xl text-royal-900 mb-6">Who We Are</h3>
-              <p className="font-inter text-gray-600 text-lg leading-relaxed mb-6">
-                Jesus Christ Word Miracles Ministry (JCWMM) is a vibrant, Christ-centered church based in Hyderabad, Telangana. 
-                Founded on God's Word and prayer, we are committed to sharing the love, grace, and transforming power of Jesus Christ, 
-                leading people into a life of faith, hope, and purpose through the truth of the Gospel.  
+              <h3 className="jcwmm-h3 text-royal-900 mb-6">Who We Are</h3>
+              <p className="jcwmm-body text-gray-600 leading-relaxed mb-6">
+                Judah Asher Ministries is a vibrant, Christ-centered church based in Hyderabad, Telangana.
+                Founded on God's Word and prayer, we are committed to sharing the love, grace, and transforming power of Jesus Christ,
+                leading people into a life of faith, hope, and purpose through the truth of the Gospel.
               </p>
-              <p className="font-inter text-gray-600 text-lg leading-relaxed mb-8">
-                Whether you are seeking a spiritual home, healing, hope, or a deeper relationship with Jesus Christ, you are warmly welcomed into our church family. 
-                At JCWMM, you will experience heartfelt worship, biblical teaching, passionate prayer, the power and guidance of the Holy Spirit, 
+              <p className="jcwmm-body text-gray-600 leading-relaxed mb-8">
+                Whether you are seeking a spiritual home, healing, hope, or a deeper relationship with Jesus Christ, you are warmly welcomed into our church family.
+                At Judah Asher Ministries, you will experience heartfelt worship, biblical teaching, passionate prayer, the power and guidance of the Holy Spirit,
                 and genuine fellowship as we grow together in God's presence. We believe that nothing is impossible with God, and through faith in Jesus Christ, lives are transformed, prayers are answered, and His love continues to change hearts for His glory.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -93,7 +93,7 @@ export default function AboutSection() {
                     <div className="w-8 h-8 rounded-lg bg-royal-100 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-4 h-4 text-royal-700" />
                     </div>
-                    <span className="font-inter font-medium text-gray-700 text-sm">{label}</span>
+                    <span className="jcwmm-small text-gray-700">{label}</span>
                   </div>
                 ))}
               </div>
@@ -112,11 +112,11 @@ export default function AboutSection() {
           <Target className="w-6 h-6 text-white" />
         </div>
 
-        <h3 className="font-poppins font-bold text-2xl mb-4">
+        <h3 className="jcwmm-h3 mb-4">
           Our Mission
         </h3>
 
-        <p className="font-inter text-blue-100 leading-relaxed text-lg flex-1">
+        <p className="jcwmm-body text-blue-100 leading-relaxed flex-1">
           {CHURCH_INFO.mission}
         </p>
       </div>
@@ -132,11 +132,11 @@ export default function AboutSection() {
           <Eye className="w-6 h-6 text-white" />
         </div>
 
-        <h3 className="font-poppins font-bold text-2xl mb-4">
+        <h3 className="jcwmm-h3 mb-4">
           Our Vision
         </h3>
 
-        <p className="font-inter text-amber-100 leading-relaxed text-lg flex-1">
+        <p className="jcwmm-body text-amber-100 leading-relaxed flex-1">
           {CHURCH_INFO.vision}
         </p>
       </div>
@@ -147,10 +147,10 @@ export default function AboutSection() {
         {/* ── Prophet section (inline) ── */}
         <div id="pastor" className="mb-24 scroll-mt-24">
           <SectionReveal className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-gold-100 dark-badge-bg text-gold-700 dark-badge-text text-xs font-semibold font-inter uppercase tracking-wider mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-gold-100 dark-badge-bg text-gold-700 dark-badge-text jcwmm-eyebrow mb-4">
               Leadership
             </span>
-            <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-royal-900 dark-heading mb-4">
+            <h2 className="jcwmm-h2 mb-4">
               A Message from <span className="jcwmm-yellow-heading">Our Prophet</span>
             </h2>
           </SectionReveal>
@@ -163,7 +163,7 @@ export default function AboutSection() {
                   <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-royal-900/20 bg-white dark-card">
                     <Image
                       src="/images/Prophet.png"
-                      alt="Prophet Judah Asher (Naresh) — JCWMM"
+                      alt="Prophet Judah Asher (Naresh) — JAM"
                       fill
                       sizes="(max-width: 768px) 80vw, 40vw"
                       className="object-cover object-top"
@@ -171,14 +171,14 @@ export default function AboutSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-royal-900/70 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="font-poppins font-bold text-xl">Prophet Judah Asher</h3>
-                      <p className="font-inter text-blue-200 text-sm">Naresh · Founder & Lead Prophet, JCWMM</p>
+                      <h3 className="jcwmm-h3">Prophet Judah Asher</h3>
+                      <p className="jcwmm-caption text-blue-200">Naresh · Founder & Lead Prophet, Judah Asher Ministries</p>
                     </div>
                   </div>
                   {/* Decorative gold card */}
                   <div className="absolute -bottom-4 -right-4 bg-white dark-card rounded-2xl shadow-xl p-4 border border-gold-100 dark-border">
-                    <div className="text-2xl font-poppins font-bold text-gradient-gold">18+</div>
-                    <div className="text-xs text-gray-500 dark-muted font-inter">Years in Ministry</div>
+                    <div className="jcwmm-h2">18+</div>
+                    <div className="jcwmm-caption text-gray-500 dark-muted">Years in Ministry</div>
                   </div>
                   <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl gold-gradient opacity-70" />
                 </div>
@@ -189,13 +189,13 @@ export default function AboutSection() {
                 <div className="relative">
                   <Quote className="absolute -top-4 -left-2 w-12 h-12 text-royal-200 dark-muted-icon -z-10" />
                   <div className="bg-white dark-card rounded-3xl p-8 shadow-xl shadow-royal-100/50 border border-royal-50 dark-border">
-                    <h3 className="font-poppins font-bold text-2xl text-royal-900 dark-heading mb-6">
+                    <h3 className="jcwmm-h3 text-royal-900 dark-heading mb-6">
                       Welcome to Our Church Family
                     </h3>
-                    <div className="space-y-4 font-inter text-gray-700 dark-body leading-relaxed text-[1.0625rem]">
+                    <div className="space-y-4 jcwmm-body text-gray-700 dark-body leading-relaxed">
                       <p>
                         Beloved friend, it is with great joy and a heart full of gratitude that I welcome
-                        you to Jesus Christ Word Miracles Ministry. Whether you are joining us for the
+                        you to Judah Asher Ministries. Whether you are joining us for the
                         first time or have been part of our family for years — you are deeply loved,
                         valued, and wanted here.
                       </p>
@@ -219,7 +219,7 @@ export default function AboutSection() {
                       <div>
                         <div className="font-poppins font-bold text-royal-900 dark-heading">God Bless You,</div>
                         <div className="font-inter text-gray-500 dark-muted text-sm">Prophet Judah Asher (Naresh)</div>
-                        <div className="font-inter text-royal-500 dark-accent text-xs">Founder & Lead Prophet, JCWMM</div>
+                        <div className="font-inter text-royal-500 dark-accent text-xs">Founder & Lead Prophet, Judah Asher Ministries</div>
                       </div>
                       <div className="px-5 py-2.5 rounded-xl blue-gradient text-white font-poppins font-semibold text-sm cursor-default">
                         Est. 2008
@@ -235,10 +235,10 @@ export default function AboutSection() {
         {/* ── Prophet & Prophetess Couple section (inline) ── */}
         <div id="prophetess" className="mb-24 scroll-mt-24">
           <SectionReveal className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-gold-100 dark-badge-bg text-gold-700 dark-badge-text text-xs font-semibold font-inter uppercase tracking-wider mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-gold-100 dark-badge-bg text-gold-700 dark-badge-text jcwmm-eyebrow mb-4">
               Our Family
             </span>
-            <h2 className="font-poppins font-bold text-4xl sm:text-5xl text-royal-900 dark-heading mb-4">
+            <h2 className="jcwmm-h2 mb-4">
               A Word from <span className="jcwmm-yellow-heading">Our Prophet & Prophetess</span>
             </h2>
           </SectionReveal>
@@ -251,7 +251,7 @@ export default function AboutSection() {
                   <div className="relative w-full max-w-sm mx-auto aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl shadow-royal-900/20 bg-gradient-to-br from-royal-50 to-gold-50 dark-card">
                     <Image
                       src="/images/both_pic.png"
-                      alt="Prophet Judah Asher & Prophetess Judah Praisy — JCWMM Founders"
+                      alt="Prophet Judah Asher & Prophetess Judah Praisy — JAM Founders"
                       fill
                       sizes="(max-width: 768px) 80vw, 40vw"
                       className="object-cover object-top"
@@ -260,7 +260,7 @@ export default function AboutSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-royal-900/70 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                       <h3 className="font-poppins font-bold text-xl">Prophet Judah Asher &amp; Prophetess Judah Praisy</h3>
-                      <p className="font-inter text-blue-200 text-sm">Founders, JCWMM</p>
+                      <p className="font-inter text-blue-200 text-sm">Founders, Judah Asher Ministries</p>
                     </div>
                   </div>
                   {/* Decorative gold accent */}
@@ -269,8 +269,8 @@ export default function AboutSection() {
                     <div className="flex items-center gap-2">
                       <Flame className="w-5 h-5 text-gold-500" />
                       <div>
-                        <div className="text-xs font-poppins font-bold text-royal-900 dark-heading">One in Christ</div>
-                        <div className="text-[10px] text-gray-500 dark-muted font-inter">A Family of Faith</div>
+                        <div className="jcwmm-caption text-royal-900 dark-heading">One in Christ</div>
+                        <div className="jcwmm-caption text-gray-500 dark-muted">A Family of Faith</div>
                       </div>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export default function AboutSection() {
                       </p>
                       <p>
                         We believe that a family built on Christ is a powerful testimony of His grace. Our prayer
-                        is that every home that connects with JCWMM would experience the same love, unity, and
+                        is that every home that connects with Judah Asher Ministries would experience the same love, unity, and
                         restoration that God has so graciously poured into ours.
                       </p>
                       <p>
@@ -304,11 +304,11 @@ export default function AboutSection() {
                         We love you, and we are praying for you every single day.
                       </p>
                     </div>
-                    <div className="mt-8 pt-6 border-t border-gray-100 dark-border flex items-center justify-between">
+                     <div className="mt-8 pt-6 border-t border-gray-100 dark-border flex items-center justify-between">
                       <div>
                         <div className="font-poppins font-bold text-royal-900 dark-heading">With Love,</div>
                         <div className="font-inter text-gray-500 dark-muted text-sm">Prophet Judah Asher &amp; Prophetess Judah Praisy</div>
-                        <div className="font-inter text-royal-500 dark-accent text-xs">Founders, JCWMM</div>
+                        <div className="font-inter text-royal-500 dark-accent text-xs">Founders, Judah Asher Ministries</div>
                       </div>
                       <div className="px-5 py-2.5 rounded-xl gold-gradient text-white font-poppins font-semibold text-sm cursor-default">
                         Est. 2008

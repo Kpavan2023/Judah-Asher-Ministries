@@ -33,7 +33,7 @@ export default function LoadingScreen() {
           <div className="relative w-24 h-24 rounded-full bg-white/10 border-2 border-gold-400/50 flex items-center justify-center overflow-hidden">
             <Image
               src="/images/both_pic.png"
-              alt="JCWMM Logo"
+              alt="Judah Asher Ministries Logo"
               width={80}
               height={80}
               className="object-contain rounded-full"
@@ -42,8 +42,8 @@ export default function LoadingScreen() {
           </div>
         </div>
         <div className="text-center">
-          <h1 className="font-poppins font-bold text-2xl text-white tracking-wide">JCWMM</h1>
-          <p className="text-gold-300 text-sm mt-1 font-inter">Jesus Christ Word Miracles Ministry</p>
+          <h1 className="font-poppins font-bold text-2xl text-white tracking-wide">Judah Asher Ministries</h1>
+          {/* <p className="text-gold-300 text-sm mt-1 font-inter">Jesus Christ Word Miracles Ministry</p> */}
         </div>
         <div className="flex gap-1.5 mt-2">
           {[0, 1, 2, 3, 4].map((i) => (

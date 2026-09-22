@@ -273,6 +273,72 @@
   }
 }
 
+/* =========================================================
+   TYPOGRAPHY SYSTEM
+   Poppins for headings · Inter for body
+   ========================================================= */
+
+.jcwmm-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(9px, 1.2vw, 11px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.jcwmm-caption {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(10px, 1.3vw, 12px);
+  line-height: 1.5;
+}
+
+.jcwmm-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(12px, 1.4vw, 14px);
+  line-height: 1.6;
+}
+
+.jcwmm-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.7;
+}
+
+.jcwmm-h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.jcwmm-h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.jcwmm-h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.jcwmm-display {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(42px, 5.5vw, 78px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -506,7 +572,7 @@
 .hero-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: clamp(56px, 11vw, 120px);
+  font-size: clamp(42px, 5.5vw, 78px);
   line-height: 1;
   letter-spacing: 0.04em;
   background: linear-gradient(180deg, #ffffcc 0%, #ffff66 35%, #ffff00 70%, #cccc00 100%);
@@ -515,6 +581,9 @@
   background-clip: text;
   filter: drop-shadow(0 0 10px rgba(255,255,0,0.12));
   margin: 0;
+}
+@media (max-width: 640px) {
+  .hero-title { font-size: clamp(38px, 11vw, 58px); }
 }
 
 .hero-founder-welcome-divider {
@@ -551,7 +620,7 @@
 .hero-founder-block h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: clamp(22px, 4.5vw, 38px);
+  font-size: clamp(23px, 3.5vw, 36px);
   color: #ffffff;
   margin: 0;
   text-shadow: 0 2px 16px rgba(0,0,0,0.5);
@@ -565,24 +634,11 @@
   gap: 14px;
   margin: 14px auto;
 }
-.hero-name-divider {
-  width: fit-content;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 14px;
-
-  margin: 14px auto;
-}
 
 .hero-name-divider span {
   display: block;
-
   width: 48px;
   height: 1px;
-
   background: rgba(255, 255, 0, 0.32);
 }
 
@@ -590,20 +646,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
-
   color: rgba(255, 255, 0, 0.55);
-}
-.hero-name-divider span {
-  display: block;
-  width: 48px;
-  height: 1px;
-  background: rgba(255,255,0,0.32);
-}
-.hero-name-divider b {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: rgba(255,255,0,0.55);
 }
 
 .hero-ministry-name {
@@ -1521,53 +1564,55 @@ html.dark .mobile-menu-footer {
   }
 }
 /* ════════════════════════════════════════════
-   GIVE NOW — PREMIUM THEME SYSTEM
-   ════════════════════════════════════════════ */
+   GIVE NOW — PREMIUM THEME
+   ════════════════════════════════════════════════════════ */
 
 .give-page {
+  position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
+
   background:
     radial-gradient(
-      ellipse 90% 35% at 50% 0%,
-      rgba(245, 158, 11, 0.055),
-      transparent 60%
+      ellipse 80% 35% at 50% 0%,
+      rgba(245, 158, 11, 0.065),
+      transparent 65%
     ),
     linear-gradient(
       180deg,
       #f8fafc 0%,
-      #ffffff 28%,
+      #ffffff 22%,
       #f8fafc 100%
     );
+
   color: #0f172a;
+
   transition:
     background 0.35s ease,
     color 0.35s ease;
 }
 
-/* ───────────────────────────────────────────
-   Dark mode
-   ─────────────────────────────────────────── */
-
 html.dark .give-page {
   background:
     radial-gradient(
-      ellipse 90% 35% at 50% 0%,
+      ellipse 80% 35% at 50% 0%,
       rgba(245, 158, 11, 0.035),
-      transparent 60%
+      transparent 65%
     ),
     linear-gradient(
       180deg,
       #050505 0%,
-      #000000 45%,
+      #000000 28%,
       #050505 100%
     );
-  color: #f1f5f9;
+
+  color: #f8fafc;
 }
 
 
-/* ════════════════════════════════════════════
+/* ========================================================
    PAGE SURFACES
-   ════════════════════════════════════════════ */
+   ======================================================== */
 
 .give-surface {
   background: rgba(255, 255, 255, 0.78);

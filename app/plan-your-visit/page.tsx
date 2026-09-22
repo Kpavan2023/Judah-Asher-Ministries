@@ -17,12 +17,12 @@ const MAPS_URL =
   'https://www.google.com/maps/place/JCWMM+Church/@17.4353984,78.4490905,21z/data=!4m6!3m5!1s0x3bcb910006dd8d83:0xe60192921bfababe!8m2!3d17.4355138!4d78.4493678!16s%2Fg%2F11zx6s8qld!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D';
 
 export const metadata: Metadata = {
-  title: 'Plan Your Visit | Jesus Christ Word Miracles Ministry (JCWMM)',
+  title: 'Plan Your Visit | Judah Asher Ministries',
   description:
-    'Planning your first visit to JCWMM? Find everything you need to know: service times, parking, dress code, children\'s ministry, and what to expect.',
+    'Planning your first visit to Judah Asher Ministries? Find everything you need to know: service times, parking, dress code, children\'s ministry, and what to expect.',
   openGraph: {
-    title: 'Plan Your Visit | JCWMM',
-    description: 'Everything you need to know before visiting Jesus Christ Word Miracles Ministry.',
+    title: 'Plan Your Visit | Judah Asher Ministries',
+    description: 'Everything you need to know before visiting Judah Asher Ministries.',
   },
 };
 
@@ -57,7 +57,7 @@ Our ushers will be happy to guide you from the parking area to the church entran
     id: 'dress-code',
     icon: <Shirt className="w-5 h-5 text-royal-600" />,
     question: 'What should I wear?',
-    answer: `At JCWMM, we believe you should **come as you are**. There is no strict dress code — what matters most is your heart, not your outfit.
+    answer: `At Judah Asher Ministries, we believe you should **come as you are**. There is no strict dress code — what matters most is your heart, not your outfit.
 
 Most of our congregation dresses in smart-casual to semi-formal attire:
 
@@ -195,7 +195,7 @@ export default function PlanYourVisitPage() {
       <div className="visit-brand-image">
         <Image
           src="/images/both_pic.png"
-          alt="JCWMM — Founders"
+          alt="Judah Asher Ministries — Founders"
           width={34}
           height={34}
           className="h-full w-full object-contain"
@@ -208,7 +208,7 @@ export default function PlanYourVisitPage() {
         </span>
 
         <span className="visit-brand-subtitle">
-          JCWMM
+          Judah Asher Ministries
         </span>
       </div>
 
@@ -253,7 +253,7 @@ export default function PlanYourVisitPage() {
             </h1>
             <p className="font-inter text-blue-200 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
               We're so excited to have you join us! Here's everything you need to know
-              to make your first visit to JCWMM comfortable, joyful, and memorable.
+              to make your first visit to Judah Asher Ministries comfortable, joyful, and memorable.
             </p>
           </div>
         </section>
@@ -277,7 +277,7 @@ export default function PlanYourVisitPage() {
               <div className="flex items-center gap-2 text-white">
                 <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-gold-400" />
-                  <span className="text-white font-medium hover:text-gold-300 transition-colors">JCWMM Church, Ameerpet, Hyderabad</span>
+                  <span className="text-white font-medium hover:text-gold-300 transition-colors">Judah Asher Ministries, Ameerpet, Hyderabad</span>
                 </a>
               </div>
             </div>

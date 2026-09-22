@@ -45,12 +45,17 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-14 h-14 rounded-xl overflow-hidden ring-1 ring-[#ffff00]/30 bg-white">
-                <Image src="/images/both_pic.png" alt="JCWMM — Founders" fill sizes="56px" className="object-contain" />
+              <div className="relative w-14 h-14 aspect-square flex-shrink-0 overflow-hidden rounded-xl bg-white ring-1 ring-[#ffff00]/30">
+                <Image
+                  src="/images/both_pic.png"
+                  alt="Judah Asher Ministries — Founders"
+                  fill
+                  sizes="56px"
+                  className="object-contain object-center"
+                />
               </div>
               <div>
-                <span className="font-poppins font-bold text-xl text-white block">JCWMM</span>
-                <span className="text-royal-300 text-xs font-inter">Jesus Christ Word Miracles Ministry</span>
+                <span className="font-poppins font-bold text-xl text-white block">Judah Asher Ministries</span>
               </div>
             </div>
             <p className="text-royal-300 text-sm leading-relaxed font-inter mb-5">
@@ -179,7 +184,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-royal-400 text-xs font-inter">
-          <p>&copy; {year} Jesus Christ Word Miracles Ministry (JCWMM). All rights reserved.</p>
+          <p>&copy; {year} Judah Asher Ministries. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <button className="hover:text-gold-400 transition-colors">Privacy Policy</button>
             <span className="text-royal-700">|</span>

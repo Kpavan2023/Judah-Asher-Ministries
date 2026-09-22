@@ -15,7 +15,7 @@ export default function Loading() {
           <div className="absolute inset-2 rounded-full overflow-hidden bg-white/5 flex items-center justify-center">
             <Image
               src="/images/both_pic.png"
-              alt="JCWMM loading logo"
+              alt="Judah Asher Ministries loading logo"
               fill
               sizes="64px"
               className="object-contain"
