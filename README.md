@@ -1,4 +1,4 @@
-# JCWMM Official Website
+# Judah Asher Ministries Official Website
 
 > **Judah Asher Ministries**
 > *Sharing God’s Word • Transforming Lives • Walking in Faith*
