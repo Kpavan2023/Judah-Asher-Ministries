@@ -1,6 +1,6 @@
 # JCWMM Official Website
 
-> **Jesus Christ Word Miracles Ministry (JCWMM)**
+> **Judah Asher Ministries**
 > *Sharing God’s Word • Transforming Lives • Walking in Faith*
 
 A modern, responsive, production-ready church website built with **Next.js 13**, **TypeScript**, **Tailwind CSS**, and **Supabase**. The website serves as the official digital platform for **Jesus Christ Word Miracles Ministry (JCWMM)** in Hyderabad, Telangana, India, led by **Prophet Judah Asher (Naresh)**.
@@ -9,14 +9,14 @@ A modern, responsive, production-ready church website built with **Next.js 13**,
 
 ## Overview
 
-The JCWMM website is designed to provide a welcoming online presence for visitors and church members. It includes sermon streaming, event announcements, ministry information, prayer request submission, and contact resources, all optimized for desktop, tablet, and mobile devices.
+The Judah Asher Ministries website is designed to provide a welcoming online presence for visitors and church members. It includes sermon streaming, event announcements, ministry information, prayer request submission, and contact resources, all optimized for desktop, tablet, and mobile devices.
 
 ---
 
 ## Key Features
 
 * Elegant **hero section** with responsive typography and service status badge
-* **About JCWMM** with mission, vision, and core beliefs
+* **About Judah Asher Ministries** with mission, vision, and core beliefs
 * **Weekly service schedule** and ministry information
 * **Prophet Judah Asher** profile section
 * **Bible verse carousel** with automatic rotation
@@ -127,8 +127,7 @@ The project can be deployed directly to **Vercel**.
 npm install -g vercel
 vercel
 ```
-
-After deployment, connect your custom domain (planned: **prophetjudahasher.com**) through the Vercel dashboard.
+**Domain:** https://www.jcwmm.org
 
 ---
 
@@ -175,11 +174,11 @@ The website supports all modern evergreen browsers, including:
 
 ## License
 
-This project is proprietary software developed exclusively for **Jesus Christ Word Miracles Ministry (JCWMM)**.
+This project is proprietary software developed exclusively for **Judah Asher Ministries**.
 
-Unauthorized reproduction, distribution, or modification of this codebase is prohibited without prior written permission from JCWMM.
+Unauthorized reproduction, distribution, or modification of this codebase is prohibited without prior written permission from Judah Asher Ministries.
 
 ---
 
-**Jesus Christ Word Miracles Ministry (JCWMM)**
+**Judah Asher Ministries**
 Hyderabad, Telangana, India

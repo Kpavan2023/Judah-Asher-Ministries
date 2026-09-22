@@ -62,7 +62,7 @@ export default function AboutSection() {
               {/* Floating card */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px]">
                 <div className="jcwmm-h2">18+</div>
-                <div className="jcwmm-small text-gray-600">Years Serving the Community</div>
+                <div className="jcwmm-small text-gray-600">Years of Serving God</div>
               </div>
               {/* Gold accent */}
               <div className="absolute -top-4 -left-4 w-20 h-20 rounded-2xl gold-gradient opacity-80 -z-10" />

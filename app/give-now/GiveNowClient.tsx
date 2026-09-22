@@ -168,7 +168,7 @@ export default function GiveNowClient() {
               />
             </div>
 
-            <span className="give-brand-name">
+            <span className="give-brand-name hidden sm:block">
               Judah Asher Ministries
             </span>
           </div>

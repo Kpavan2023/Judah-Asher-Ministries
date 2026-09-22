@@ -1740,49 +1740,6 @@ html.dark .give-ambient-glow-blue {
    TOP BAR
    ======================================================== */
 
-.give-topbar {
-  position: relative;
-  z-index: 20;
-
-  padding: 10px 0 0;
-}
-
-.give-topbar-inner {
-  width: min(1180px, calc(100% - 24px));
-  min-height: 62px;
-  margin-inline: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 8px 12px;
-
-  border-radius: 18px;
-
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-
-  box-shadow:
-    0 10px 35px rgba(15, 23, 42, 0.07);
-
-  transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-html.dark .give-topbar-inner {
-  background: rgba(10, 10, 10, 0.78);
-  border-color: rgba(255, 255, 255, 0.09);
-
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
 .give-back-link {
   display: inline-flex;
   align-items: center;
@@ -1844,7 +1801,8 @@ html.dark .give-brand-name {
   position: relative;
   z-index: 2;
 
-  padding: 70px 0 30px;
+  /* Space reserved below the fixed floating bar */
+  padding: 100px 0 30px;
 }
 
 .give-intro-inner {
@@ -3113,9 +3071,9 @@ html.dark .give-contact-email:hover {
     height: 34px;
   }
 
-  .give-intro {
-    padding: 48px 0 18px;
-  }
+.give-intro {
+  padding: 100px 0 30px;
+}
 
   .give-main-title {
     font-size: clamp(34px, 10vw, 48px);
@@ -3890,4 +3848,184 @@ html:not(.dark) .give-contact-email {
 
 html:not(.dark) .give-contact-email:hover {
   color: #d97706;
+}
+
+/* ========================================================
+   GIVE NOW — STABLE FLOATING GLASS TOP BAR
+   ======================================================== */
+
+.give-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 9998;
+
+  padding: 10px 12px 0;
+
+  pointer-events: none;
+}
+
+.give-topbar-inner {
+  pointer-events: auto;
+
+  width: min(1180px, calc(100% - 24px));
+  min-height: 62px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 12px;
+
+  border-radius: 18px;
+
+  background: rgba(10, 14, 26, 0.48);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.20);
+
+  /* Visual transition only — NEVER position */
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ========================================================
+   LIGHT MODE
+   ======================================================== */
+
+html:not(.dark) .give-topbar-inner {
+  background: rgba(255, 255, 255, 0.82);
+
+  border-color: rgba(15, 23, 42, 0.08);
+
+  box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ========================================================
+   DARK MODE
+   ======================================================== */
+
+html.dark .give-topbar-inner {
+  background: rgba(9, 9, 9, 0.82);
+
+  border-color: rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.42);
+}
+
+
+/* ========================================================
+   BACK LINK
+   ======================================================== */
+
+.give-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #475569;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.give-back-link:hover {
+  color: #1d4ed8;
+  transform: translateX(-1px);
+}
+
+html.dark .give-back-link {
+  color: #94a3b8;
+}
+
+html.dark .give-back-link:hover {
+  color: #ffffff;
+}
+
+
+/* ========================================================
+   BRAND IMAGE
+   ======================================================== */
+
+.give-brand-image {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(217, 119, 6, 0.18);
+
+  background: #ffffff;
+}
+
+
+/* ========================================================
+   BRAND NAME
+   ======================================================== */
+
+.give-brand-name {
+  color: #0f172a;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+html.dark .give-brand-name {
+  color: #ffffff;
+}
+
+
+/* ========================================================
+   MOBILE
+   ======================================================== */
+
+@media (max-width: 640px) {
+  .give-topbar {
+    padding: 7px 7px 0;
+  }
+
+  .give-topbar-inner {
+    width: calc(100% - 0px);
+
+    min-height: 56px;
+
+    padding: 7px 9px;
+
+    border-radius: 16px;
+  }
+
+  .give-back-link {
+    font-size: 12px;
+  }
+
+  .give-brand-image {
+    width: 34px;
+    height: 34px;
+  }
 }

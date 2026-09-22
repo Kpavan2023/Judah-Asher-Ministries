@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     title: 'Judah Asher Ministries',
     description:
-      'Official website of Judah Asher Ministries. Join us for worship, prayer, Bible study, live sermons, and community fellowship.',
+      'Official website of Judah Asher Ministries. Join us for worship, prayer, Bible study, live sermons, and fellowship.',
     siteName: 'Judah Asher Ministries',
     images: [
       {
